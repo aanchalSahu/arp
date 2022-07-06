@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.navbar.white {
+  background:rgba(255, 255, 255, 0.89) !important;   
+}
+
+#home {
+background-color:skyblue;
+height:500px;
+}
