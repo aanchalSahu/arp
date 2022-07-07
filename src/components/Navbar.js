@@ -16,16 +16,16 @@ import AdbIcon from '@mui/icons-material/Adb';
 const pages = ['Products', 'Pricing', 'Blog'];
 const p =[
     {'url':'/page2','name':'Products'},
-    {'url':'/page1','name':'Products'},
-    {'url':'/page3','name':'Products'}
+    {'url':'/page1','name':'Contact'},
+    {'url':'/page3','name':'About Us'}
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(false);
-const ref=React.useRef()
-// const ref2=React.useRef()
+const ref=React.useRef(null)
+const ref2=React.useRef(null)
   return (
     <AppBar position="static" id='navbar' style={{
         marginBottom: "4rem",
@@ -57,7 +57,7 @@ const ref=React.useRef()
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-            //   onClick={(e)=>setAnchorElNav(true)}
+              onClick={(e)=>setAnchorElNav(true)}
               ref={ref}
               color="inherit"
             >
@@ -65,7 +65,7 @@ const ref=React.useRef()
             </IconButton>
             <Menu
               id="menu-appbar"
-            //   anchorEl={ref}
+              anchorEl={ref.current}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
@@ -81,13 +81,28 @@ const ref=React.useRef()
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem key={page} 
-                // onClick={(e)=>setAnchorElNav(false)}
+                onClick={(e)=>setAnchorElNav(false)}
                 >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
+              {p.map((row,index) =>{ 
+                const {url,name}=row
+                return(
+                    <MenuItem key={name} 
+                onClick={(e)=>setAnchorElNav(false)}
+                >
+              {/* <Button
+                key={index}
+                href={url}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              > */}
+                {name}
+                </MenuItem>
+            )}
+            )}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -127,7 +142,8 @@ const ref=React.useRef()
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton 
-            //   onClick={(e)=>setAnchorElUser(true)}
+              ref={ref2}
+              onClick={(e)=>setAnchorElUser(true)}
                sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -135,7 +151,7 @@ const ref=React.useRef()
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
-            //   anchorEl={anchorElUser}
+              anchorEl={ref2.current}
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right',
@@ -150,7 +166,7 @@ const ref=React.useRef()
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} 
-                // onClick={(e)=>setAnchorElUser(false)}
+                onClick={(e)=>setAnchorElUser(false)}
                 >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
