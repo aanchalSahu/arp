@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Card, Container, Box, Paper } from '@mui/material'
+import {  Paper } from '@mui/material'
 export default function PaperComponent(props) {
     const { content } = props
     return (

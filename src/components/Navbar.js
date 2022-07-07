@@ -13,7 +13,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
 const p =[
     {'url':'/page2','name':'Products'},
     {'url':'/page1','name':'Contact'},
@@ -93,6 +92,7 @@ const ref2=React.useRef(null)
                 return(
                     <MenuItem key={name} 
                 onClick={(e)=>setAnchorElNav(false)}
+                href={url}
                 >
               {/* <Button
                 key={index}
