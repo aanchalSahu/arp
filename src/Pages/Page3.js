@@ -55,7 +55,7 @@ export default function Page3() {
               const { src } = row;
               return (
                 <div className="item" key={index}>
-                  <img src={src} />
+                  <img src={src} alt={src}/>
                 </div>
               );
             })}
@@ -82,7 +82,7 @@ export default function Page3() {
               const { src } = row;
               return (
                 <div className="item" key={index}>
-                  <img src={src} />
+                  <img src={src} alt={src}/>
                 </div>
               );
             })}

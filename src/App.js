@@ -4,7 +4,7 @@ import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Link } from "@mui/material";
+import NavBar from "./components/Navbar";
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
           backgroundColor: "#000",
         }}
       />
-      <h1>Arpan Decores</h1>
-      <nav
+      
+      {/* <nav
         style={{
           paddingBottom: "4rem",
         }}
@@ -32,10 +32,13 @@ function App() {
         <Link href="/page2">Click me first..  {" "} </Link>{" "}
         <Link href="/page1">then me,{" "} </Link> 
         <Link href="/page3"> now obviously me!!</Link>
-      </nav>
+        
+      </nav> */}
+      <NavBar/>
+      <h1>Arpan Decores</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Page1 />} />
+          <Route path="/" element={<Page3 />} />
           <Route path="page2" element={<Page1 />} />
           <Route path="page1" element={<Page2 />} />
           <Route path="page3" element={<Page3 />} />
