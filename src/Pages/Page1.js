@@ -1,9 +1,11 @@
+import Typography from "@mui/material/Typography";
+
 export default function Page1 (){
 return(
     <div>
-        <h1>
+        <Typography variant='h2' className="cursive-font" >
            Hello there!
-        </h1>
+        </Typography>
     </div>
 );
 }
